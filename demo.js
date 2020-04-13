@@ -56,8 +56,18 @@ let person2 = Object.create(
   }
 );
 
-display(person2);
-Object.defineProperty(person2,'firstName',{writable:false});
-display(Object.getOwnPropertyDescriptor(person2,'firstName'));
+
+Object.defineProperty(person2,'fullName',{
+  get: function() {
+    return this.firstName + " " + this.lastName;
+  },
+  set: function(fullName) {
+    var nameParts = fullName.split(' ');
+    this.firstName = nameParts[0];
+    this.lastName = nameParts[1];
+  }
+});
+person2.fullName = 'Anonymous rkc';
+display(person2.firstName);
 
 })();
