@@ -2,11 +2,11 @@
 (function() {
 let person = {
   firstName : 'Rahul',
-  lastName : 'Kumar'
+  lastName : 'Kumar',
+  age :18,
+  isAdult : function(){return this.age >= 18;}
 };
 
-person.age = 24;
-person.isAdult = function(){return this.age > 18;};
 display(person.isAdult());
 
 })();
