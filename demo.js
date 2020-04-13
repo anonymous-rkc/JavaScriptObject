@@ -36,5 +36,17 @@ let mergedPerson = mergeHealthStats(person,healthStats);
 display(mergedPerson);
 display(person);
 
+let employee= function(firstName,lastName,age){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+}
+
+let sumit = new employee("Sumit","Kumar",23);
+let rahul = new employee("Rahul","Kumar",24);
+display(sumit);
+display(rahul);
+
+
 
 })();
