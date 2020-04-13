@@ -1,1 +1,2 @@
-# JavaScriptObject
+# JavaScript Objects, Prototypes and Classes
+
