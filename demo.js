@@ -40,11 +40,12 @@ let employee= function(firstName,lastName,age){
   this.firstName = firstName;
   this.lastName = lastName;
   this.age = age;
+  this.isAdult= function() {return this.age >= 18}
 }
 
 let sumit = new employee("Sumit","Kumar",23);
 let rahul = new employee("Rahul","Kumar",24);
-display(sumit);
+display(sumit.isAdult());
 display(rahul);
 
 
