@@ -1,12 +1,13 @@
 'use strict'; 
 (function() {
-let person = {
-  firstName : 'Rahul',
-  lastName : 'Kumar',
-  age :18,
-  isAdult : function(){return this.age >= 18;}
-};
+  function registerUser(firstName,lastName){
+   var person = { 
+      firstName,
+      lastName
+    };
+    display(person.firstName);
+  }
 
-display(person.isAdult());
+registerUser("Anonynous-","rkc");
 
 })();
