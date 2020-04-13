@@ -5,6 +5,8 @@ let person = {
   lastName : 'Kumar'
 };
 
-display(person.firstName);
+person.age = 24;
+person.isAdult = function(){return this.age > 18;};
+display(person.isAdult());
 
 })();
