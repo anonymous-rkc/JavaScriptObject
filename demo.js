@@ -43,11 +43,19 @@ let employee= function(firstName,lastName,age){
   this.isAdult= function() {return this.age >= 18}
 }
 
-let sumit = new employee("Sumit","Kumar",23);
+let sumit = new employee("Sumit","Singh",23);
 let rahul = new employee("Rahul","Kumar",24);
-display(sumit.isAdult());
+display(sumit);
 display(rahul);
 
+let person2 = Object.create(
+  Object.prototype,{
+    firstName : {value:"Rahul",enumerable:true,configurable:true,writable:true},
+    lastName : {value:"Kumar",enumerable:true,configurable:true,writable:true},
+    age : {value:24,enumerable:true,configurable:true,writable:true},
+  }
+);
 
+display(person2);
 
 })();
