@@ -57,5 +57,7 @@ let person2 = Object.create(
 );
 
 display(person2);
+Object.defineProperty(person2,'firstName',{writable:false});
+display(Object.getOwnPropertyDescriptor(person2,'firstName'));
 
 })();
