@@ -1,73 +1,31 @@
 'use strict'; 
 (function() {
-  function registerUser(firstName,lastName){
-   var person = { 
-      firstName,
-      lastName
-    };
-    //display(person.firstName);
-  }
 
-registerUser("Anonynous-","rkc");
+  var xhr = new XMLHttpRequest();
+  var url = 'https://reqres.in/api/users'
+  xhr.open('POST',url , true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = function () {
+    
+      display(JSON.parse(this.responseText));
 
-var person = { 
-  firstName:"Anonymous",
-  lastName:"rkc",
-  age:17,
-  isAdult() {return this.age >= 18}
-};
+  };
+  xhr.send('name=s&job=j');
 
-display(person.isAdult());
-display(Object.keys(person));
-for(var x in person){
-  display(x + " " +person[x]);
-}
-let healthStats = {
-  height : 165,
-  weight : 60
-};
+  // var xhr1 = new XMLHttpRequest();
+  // var url = 'https://reqres.in/api/users'
+  // xhr1.open('POST',url , true);
+  // xhr1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  // xhr1.onload = function () {
+    
+  //     display(JSON.parse(this.responseText));
 
-function mergeHealthStats(person,healthStats){
-  return Object.assign({},person,healthStats);
-}
+  // };
+  // var data = JSON.stringify({
+  //   name: 'Hubot',
+  //   job: 'hubot',
+  //   });
+  // xhr1.send(data);
 
-let mergedPerson = mergeHealthStats(person,healthStats);
-
-display(mergedPerson);
-display(person);
-
-let employee= function(firstName,lastName,age){
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.age = age;
-  this.isAdult= function() {return this.age >= 18}
-}
-
-let sumit = new employee("Sumit","Singh",23);
-let rahul = new employee("Rahul","Kumar",24);
-display(sumit);
-display(rahul);
-
-let person2 = Object.create(
-  Object.prototype,{
-    firstName : {value:"Rahul",enumerable:true,configurable:true,writable:true},
-    lastName : {value:"Kumar",enumerable:true,configurable:true,writable:true},
-    age : {value:24,enumerable:true,configurable:true,writable:true},
-  }
-);
-
-
-Object.defineProperty(person2,'fullName',{
-  get: function() {
-    return this.firstName + " " + this.lastName;
-  },
-  set: function(fullName) {
-    var nameParts = fullName.split(' ');
-    this.firstName = nameParts[0];
-    this.lastName = nameParts[1];
-  }
-});
-person2.fullName = 'Anonymous rkc';
-display(person2.firstName);
 
 })();
