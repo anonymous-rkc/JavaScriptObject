@@ -3,7 +3,7 @@
 
   var xhr = new XMLHttpRequest();
   var url = 'https://reqres.in/api/users'
-  xhr.open('POST',url , true);
+  xhr.open('POST',url );
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = function () {
     
